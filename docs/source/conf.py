@@ -13,7 +13,6 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../../'))
-sys.path.append(os.path.abspath("../_ext"))
 
 
 # -- Project information -----------------------------------------------------
@@ -29,7 +28,6 @@ author = 'Netlas Team'
 # extensions coming with Sphinx (named 'sphinx._ext.*') or your custom
 # ones.
 extensions = [
-    'urls_collector'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -70,9 +68,3 @@ else:
     html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
-# import django settings
-import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "netlas.settings")
-
-import django
-django.setup()

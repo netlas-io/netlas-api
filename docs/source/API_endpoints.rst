@@ -51,9 +51,9 @@ Count documents by given query
 +----------+------------------------------+-----------------------------------------------------------------+
 
 
-Download
+Get download link
 +++++++++++++++++++
-Download documents by given query
+Get link for downloading documents by given query
 
 **Example:** ``api/responses/download/?q=<QUERY>&indices=<INDEX_ID>``
 
@@ -61,9 +61,17 @@ Download documents by given query
 | Method   |  Request                     |  Description                                                    |
 +==========+==============================+=================================================================+
 | ``GET``  | * ``q``                      |* ``str`` Search query                                           |
+|          | * ``size``                   |* ``int`` Number of documents to download                        |
 |          | * ``indices (optional)``     |* ``int`` Comma separated list of indices ids (default - latest) |
 |          | * ``raw (optional)``         |* ``bool`` (default False)                                       |
 +----------+------------------------------+-----------------------------------------------------------------+
+
+
+Download
++++++++++++
+Download documents using file stream
+
+**Example:** ``api/filestream/d54e6ad8cccf419bd6416180349e9132/869455736a241b3c69cfa3ab741c78c6/``
 
 
 
@@ -97,9 +105,9 @@ Count documents by given query
 +----------+------------------------------+-----------------------------------------------------------------+
 
 
-Download
+Get download link
 +++++++++++++++++++
-Download documents by given query
+Get link for downloading documents by given query
 
 **Example:** ``api/domains/download/?q=<QUERY>``
 
@@ -107,7 +115,17 @@ Download documents by given query
 | Method   |  Request                     |  Description                                                    |
 +==========+==============================+=================================================================+
 | ``GET``  | * ``q``                      |* ``str`` Search query                                           |
+|          | * ``size``                   |* ``int`` Number of documents to download                        |
+|          | * ``indices (optional)``     |* ``int`` Comma separated list of indices ids (default - latest) |
+|          | * ``raw (optional)``         |* ``bool`` (default False)                                       |
 +----------+------------------------------+-----------------------------------------------------------------+
+
+
+Download
++++++++++++
+Download documents using file stream
+
+**Example:** ``api/filestream/d54e6ad8cccf419bd6416180349e9132/869455736a241b3c69cfa3ab741c78c6/``
 
 
 
@@ -141,17 +159,27 @@ Count documents by given query
 +----------+------------------------------+-----------------------------------------------------------------+
 
 
-Download
+Get download link
 +++++++++++++++++++
-Download documents by given query
+Get link for downloading documents by given query
 
-**Example:** ``api/domains/download/?q=<QUERY>``
+**Example:** ``api/certs/download/?q=<QUERY>``
 
 +----------+------------------------------+-----------------------------------------------------------------+
 | Method   |  Request                     |  Description                                                    |
 +==========+==============================+=================================================================+
 | ``GET``  | * ``q``                      |* ``str`` Search query                                           |
+|          | * ``size``                   |* ``int`` Number of documents to download                        |
+|          | * ``raw (optional)``         |* ``bool`` (default False)                                       |
 +----------+------------------------------+-----------------------------------------------------------------+
+
+
+Download
++++++++++++
+Download documents using file stream
+
+**Example:** ``api/filestream/d54e6ad8cccf419bd6416180349e9132/869455736a241b3c69cfa3ab741c78c6/``
+
 
 
 

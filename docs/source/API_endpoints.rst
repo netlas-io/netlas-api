@@ -1,7 +1,7 @@
 API Endpoints
 ==================================
 .. attention::
-    API documentation in progress
+    API documentation is under development
 
 .. note::
     All requests to endpoints below should include X-API-Key header with your api key which can be found in profile page
@@ -20,20 +20,6 @@ Get documents by given query
 | ``GET``  | * ``q``                      |* ``str`` Search query                                           |
 |          | * ``indices (optional)``     |* ``int`` Comma separated list of indices ids (default - latest) |
 |          | * ``start (optional)``       |* ``int`` offset (default 0)                                     |
-+----------+------------------------------+-----------------------------------------------------------------+
-
-
-Statistics
-+++++++++++++++++++
-Get statistics by given query
-
-**Example:** ``api/responses_stat/?q=<QUERY>&indices=<INDEX_ID>``
-
-+----------+------------------------------+-----------------------------------------------------------------+
-| Method   |  Request                     |  Description                                                    |
-+==========+==============================+=================================================================+
-| ``GET``  | * ``q``                      |* ``str`` Search query                                           |
-|          | * ``indices (optional)``     |* ``int`` Comma separated list of indices ids (default - latest) |
 +----------+------------------------------+-----------------------------------------------------------------+
 
 
@@ -57,14 +43,17 @@ Get link for downloading documents by given query
 
 **Example:** ``api/responses/download/?q=<QUERY>&indices=<INDEX_ID>``
 
-+----------+------------------------------+-----------------------------------------------------------------+
-| Method   |  Request                     |  Description                                                    |
-+==========+==============================+=================================================================+
-| ``GET``  | * ``q``                      |* ``str`` Search query                                           |
-|          | * ``size``                   |* ``int`` Number of documents to download                        |
-|          | * ``indices (optional)``     |* ``int`` Comma separated list of indices ids (default - latest) |
-|          | * ``raw (optional)``         |* ``bool`` (default False)                                       |
-+----------+------------------------------+-----------------------------------------------------------------+
++-----------+------------------------------+----------------------------------------------------------------------------------------------------------------+
+| Method    |  Request                     |  Description                                                                                                   |
++===========+==============================+================================================================================================================+
+| ``POST``  | * ``q``                      |* ``str`` Search query                                                                                          |
+|           | * ``fields``                 |* ``list`` Comma-separated list of fields to include/exclude                                                    |
+|           | * ``size``                   |* ``int`` Number of documents to download                                                                       |
+|           | * ``source_type``            |* ``str`` Include or exclude fields (choices: include, exclude)                                                 |
+|           | * ``indices (optional)``     |* ``list`` Comma-separated IDs of selected data indices (can be retrieved by indices method) (default - latest) |
+|           | * ``type (optional)``        |* ``str`` File format (choices: json, csv) (default "json")                                                     |
+|           | * ``raw (optional)``         |* ``bool`` (default False)                                                                                      |
++-----------+------------------------------+----------------------------------------------------------------------------------------------------------------+
 
 
 Download
@@ -72,9 +61,6 @@ Download
 Download documents using file stream
 
 **Example:** ``api/filestream/d54e6ad8cccf419bd6416180349e9132/869455736a241b3c69cfa3ab741c78c6/``
-
-
-
 
 
 Domains
@@ -111,14 +97,17 @@ Get link for downloading documents by given query
 
 **Example:** ``api/domains/download/?q=<QUERY>``
 
-+----------+------------------------------+-----------------------------------------------------------------+
-| Method   |  Request                     |  Description                                                    |
-+==========+==============================+=================================================================+
-| ``GET``  | * ``q``                      |* ``str`` Search query                                           |
-|          | * ``size``                   |* ``int`` Number of documents to download                        |
-|          | * ``indices (optional)``     |* ``int`` Comma separated list of indices ids (default - latest) |
-|          | * ``raw (optional)``         |* ``bool`` (default False)                                       |
-+----------+------------------------------+-----------------------------------------------------------------+
++-----------+------------------------------+----------------------------------------------------------------------------------------------------------------+
+| Method    |  Request                     |  Description                                                                                                   |
++===========+==============================+================================================================================================================+
+| ``POST``  | * ``q``                      |* ``str`` Search query                                                                                          |
+|           | * ``fields``                 |* ``list`` Comma-separated list of fields to include/exclude                                                    |
+|           | * ``size``                   |* ``int`` Number of documents to download                                                                       |
+|           | * ``source_type``            |* ``str`` Include or exclude fields (choices: include, exclude)                                                 |
+|           | * ``indices (optional)``     |* ``list`` Comma-separated IDs of selected data indices (can be retrieved by indices method) (default - latest) |
+|           | * ``type (optional)``        |* ``str`` File format (choices: json, csv) (default "json")                                                     |
+|           | * ``raw (optional)``         |* ``bool`` (default False)                                                                                      |
++-----------+------------------------------+----------------------------------------------------------------------------------------------------------------+
 
 
 Download
@@ -165,13 +154,17 @@ Get link for downloading documents by given query
 
 **Example:** ``api/certs/download/?q=<QUERY>``
 
-+----------+------------------------------+-----------------------------------------------------------------+
-| Method   |  Request                     |  Description                                                    |
-+==========+==============================+=================================================================+
-| ``GET``  | * ``q``                      |* ``str`` Search query                                           |
-|          | * ``size``                   |* ``int`` Number of documents to download                        |
-|          | * ``raw (optional)``         |* ``bool`` (default False)                                       |
-+----------+------------------------------+-----------------------------------------------------------------+
++-----------+------------------------------+----------------------------------------------------------------------------------------------------------------+
+| Method    |  Request                     |  Description                                                                                                   |
++===========+==============================+================================================================================================================+
+| ``POST``  | * ``q``                      |* ``str`` Search query                                                                                          |
+|           | * ``fields``                 |* ``list`` Comma-separated list of fields to include/exclude                                                    |
+|           | * ``size``                   |* ``int`` Number of documents to download                                                                       |
+|           | * ``source_type``            |* ``str`` Include or exclude fields (choices: include, exclude)                                                 |
+|           | * ``indices (optional)``     |* ``list`` Comma-separated IDs of selected data indices (can be retrieved by indices method) (default - latest) |
+|           | * ``type (optional)``        |* ``str`` File format (choices: json, csv) (default "json")                                                     |
+|           | * ``raw (optional)``         |* ``bool`` (default False)                                                                                      |
++-----------+------------------------------+----------------------------------------------------------------------------------------------------------------+
 
 
 Download

@@ -37,9 +37,9 @@ Count documents by given query
 +----------+------------------------------+-----------------------------------------------------------------+
 
 
-Get download link
+Download
 +++++++++++++++++++
-Get link for downloading documents by given query
+Download documents by given query
 
 **Example:** ``api/responses/download/?q=<QUERY>&indices=<INDEX_ID>``
 
@@ -56,11 +56,7 @@ Get link for downloading documents by given query
 +-----------+------------------------------+----------------------------------------------------------------------------------------------------------------+
 
 
-Download
-+++++++++++
-Download documents using file stream
 
-**Example:** ``api/filestream/d54e6ad8cccf419bd6416180349e9132/869455736a241b3c69cfa3ab741c78c6/``
 
 
 Domains
@@ -75,6 +71,8 @@ Get documents by given query
 | Method   |  Request                     |  Description                                                    |
 +==========+==============================+=================================================================+
 | ``GET``  | * ``q``                      |* ``str`` Search query                                           |
+|          | * ``indices (optional)``     |* ``int`` Comma separated list of indices ids (default - latest) |
+|          | * ``start (optional)``       |* ``int`` offset (default 0)                                     |
 +----------+------------------------------+-----------------------------------------------------------------+
 
 
@@ -88,12 +86,13 @@ Count documents by given query
 | Method   |  Request                     |  Description                                                    |
 +==========+==============================+=================================================================+
 | ``GET``  | * ``q``                      |* ``str`` Search query                                           |
+|          | * ``indices (optional)``     |* ``int`` Comma separated list of indices ids (default - latest) |
 +----------+------------------------------+-----------------------------------------------------------------+
 
 
-Get download link
+Download
 +++++++++++++++++++
-Get link for downloading documents by given query
+Download documents by given query
 
 **Example:** ``api/domains/download/?q=<QUERY>``
 
@@ -108,13 +107,6 @@ Get link for downloading documents by given query
 |           | * ``type (optional)``        |* ``str`` File format (choices: json, csv) (default "json")                                                     |
 |           | * ``raw (optional)``         |* ``bool`` (default False)                                                                                      |
 +-----------+------------------------------+----------------------------------------------------------------------------------------------------------------+
-
-
-Download
-+++++++++++
-Download documents using file stream
-
-**Example:** ``api/filestream/d54e6ad8cccf419bd6416180349e9132/869455736a241b3c69cfa3ab741c78c6/``
 
 
 
@@ -132,6 +124,8 @@ Get documents by given query
 | Method   |  Request                     |  Description                                                    |
 +==========+==============================+=================================================================+
 | ``GET``  | * ``q``                      |* ``str`` Search query                                           |
+|          | * ``indices (optional)``     |* ``int`` Comma separated list of indices ids (default - latest) |
+|          | * ``start (optional)``       |* ``int`` offset (default 0)                                     |
 +----------+------------------------------+-----------------------------------------------------------------+
 
 
@@ -145,12 +139,13 @@ Count documents by given query
 | Method   |  Request                     |  Description                                                    |
 +==========+==============================+=================================================================+
 | ``GET``  | * ``q``                      |* ``str`` Search query                                           |
+|          | * ``indices (optional)``     |* ``int`` Comma separated list of indices ids (default - latest) |
 +----------+------------------------------+-----------------------------------------------------------------+
 
 
-Get download link
+Download
 +++++++++++++++++++
-Get link for downloading documents by given query
+Download documents by given query
 
 **Example:** ``api/certs/download/?q=<QUERY>``
 
@@ -165,51 +160,6 @@ Get link for downloading documents by given query
 |           | * ``type (optional)``        |* ``str`` File format (choices: json, csv) (default "json")                                                     |
 |           | * ``raw (optional)``         |* ``bool`` (default False)                                                                                      |
 +-----------+------------------------------+----------------------------------------------------------------------------------------------------------------+
-
-
-Download
-+++++++++++
-Download documents using file stream
-
-**Example:** ``api/filestream/d54e6ad8cccf419bd6416180349e9132/869455736a241b3c69cfa3ab741c78c6/``
-
-
-
-
-
-
-IP Search
------------
-Search
-+++++++++++++++++++
-Get documents by given query
-
-**Example:** ``api/ip/?q=<QUERY>``
-
-+----------+------------------------------+-----------------------------------------------------------------+
-| Method   |  Request                     |  Description                                                    |
-+==========+==============================+=================================================================+
-| ``GET``  | * ``q``                      |* ``str`` Search query                                           |
-+----------+------------------------------+-----------------------------------------------------------------+
-
-
-
-
-
-Domain Search
-----------------
-Search
-+++++++++++++++++++
-Get documents by given query
-
-**Example:** ``api/domain/?q=<QUERY>``
-
-+----------+------------------------------+-----------------------------------------------------------------+
-| Method   |  Request                     |  Description                                                    |
-+==========+==============================+=================================================================+
-| ``GET``  | * ``q``                      |* ``str`` Search query                                           |
-| ``GET``  | * ``related_ip``             |* ``int`` Related ip for domain                                  |
-+----------+------------------------------+-----------------------------------------------------------------+
 
 
 
